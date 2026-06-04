@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package com.suraj.interview;
+
+option java_multiple_files = true;
+option java_package = "com.suraj.interview.grpc";
+option java_outer_classname = "InterviewProto";
+
+service InterviewService {
+    rpc ChatStream(stream UserSpeech) returns (stream AiResponse);
+    rpc GetEvaluation(SessionId) returns (EvaluationReport);
+}
+
+message UserSpeech {
+    string session_id = 1;
+    string text = 2;
+    string subject = 3;
+    string subtopic = 4;
+    string difficulty = 5;
+    int32 time_minutes = 6;
+    string candidate_name = 7;
+}
+
+message AiResponse {
+    string text = 1;
+}
+
+message SessionId {
+    string id = 1;
+}
+
+message EvaluationReport {
+    string json_report = 1;
+}
+
+// ── Guidance (Teacher) Service ──
+
+service GuidanceService {
+    rpc GuidanceStream(stream GuidanceMessage) returns (stream AiResponse);
+}
+
+message GuidanceMessage {
+    string session_id = 1;
+    string text = 2;
+    string subject = 3;
+    string subtopic = 4;
+}

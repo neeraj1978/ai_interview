@@ -1,0 +1,6 @@
+.env
+.venv/
+.uv-cache/
+__pycache__/
+app/__pycache__/
+generated/
