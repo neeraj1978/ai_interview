@@ -1,0 +1,15 @@
+{
+  "total_frames": 11,
+  "averages": {
+    "confidence": 0.28,
+    "nervousness": 0.57,
+    "neutral": 0.15,
+    "posture": 67.73,
+    "eye_contact": 90.0,
+    "hand_gesture": 52.27,
+    "blink_rate": 25.0,
+    "emotion": 50.43,
+    "composite": 64.25
+  },
+  "verdict": "The user appeared somewhat disengaged with occasional moments of nervousness."
+}
